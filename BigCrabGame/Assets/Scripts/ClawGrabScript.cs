@@ -55,7 +55,7 @@ public class ClawGrabScript : MonoBehaviour
     IEnumerator dipClaw()
     {
         float elapsedTime = 0f;
-        float dipHalfDuration = 1f;
+        float dipHalfDuration = 2f;
 
         freezeClaw();
         Vector3 startPosition = clawTransform.position;
@@ -68,7 +68,7 @@ public class ClawGrabScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -0.5f, 0f);
+            Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -1f, 0f);
             Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.localPosition, downPosition, Time.deltaTime * lerpSpeed);
             clawTransform.localPosition = lerpedDownPosition;
 
@@ -86,7 +86,7 @@ public class ClawGrabScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 1f, 0f);
+            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 1.5f, 0f);
             Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
             clawTransform.localPosition = lerpedUpPosition;
 

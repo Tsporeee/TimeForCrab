@@ -11,6 +11,7 @@ public class IngredientGrabScript : MonoBehaviour
     private void Awake()
     {
         ingredientRigidbody = GetComponent<Rigidbody>();
+        ingredientRigidbody.useGravity = true;
     }
 
     public void Grab(Transform clawGrabPointTransform)
