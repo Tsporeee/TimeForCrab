@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -82,6 +84,12 @@ public class ClawScript : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void freezeClaw()
+    {
+        Rigidbody clawRigidbody = GetComponent<Rigidbody>();
+        clawRigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 }
 
