@@ -39,12 +39,6 @@ public class ClawScript : MonoBehaviour
         clawTransform.localPosition += (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
 
         currentPosition = clawTransform.localPosition;
-        
-        // Container for movement
-        clawTransform.localPosition = new Vector3(
-            Mathf.Clamp(clawTransform.localPosition.x, -horizontalMaxPosition, horizontalMaxPosition),
-            clawTransform.localPosition.y,
-            Mathf.Clamp(clawTransform.localPosition.z, -verticalMaxPosition, verticalMaxPosition));
 
     }
     
@@ -65,11 +59,11 @@ public class ClawScript : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             
-            // -0.5f centers noise, makes half as strong, multiply it by two
-            // Makes a bit of a drift but better than the super jittery other options for now
+            // -0.5f centers noise
+            // Perlin noise makes a bit of a drift but better than the super jittery other options for now
             // If we have time: FIX IT
-            float xNoise = ((Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f) * 2);
-            float zNoise = ((Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f) * 2);
+            float xNoise = (Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f);
+            float zNoise = (Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f);
             
             float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
 
