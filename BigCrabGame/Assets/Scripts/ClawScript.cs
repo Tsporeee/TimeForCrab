@@ -13,11 +13,14 @@ public class ClawScript : MonoBehaviour
     public float horizontalMaxPosition = 2f;
     public float verticalMaxPosition = 2f;
     public float speed = 5f;
+    private Vector3 inputPosition;
 
 
     // Shaking
     public float shakeDuration = 5f;
     public AnimationCurve curve;
+
+    private Coroutine clawShakeCoroutine = null;
 
     // Start is called before the first frame update
     public void Start()
@@ -39,10 +42,8 @@ public class ClawScript : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
 
-        float lerpSpeed = 20f;
-        Vector3 newPosition = clawTransform.localPosition + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
-        Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
-        clawTransform.localPosition = lerpedNewPosition;
+        inputPosition = clawTransform.localPosition + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
+        clawTransform.localPosition = inputPosition;
 
     }
     
@@ -50,7 +51,16 @@ public class ClawScript : MonoBehaviour
     {
         
         // Move this to a normal method to invoke repeating
-        StartCoroutine(shakeClaw());
+        clawShakeCoroutine = StartCoroutine(shakeClaw());
+    }
+
+    public void StopShakeClaw()
+    {
+        if(clawShakeCoroutine != null)
+        {
+            StopCoroutine(clawShakeCoroutine);
+            clawShakeCoroutine = null;
+        }
     }
 
     IEnumerator shakeClaw()
@@ -69,11 +79,9 @@ public class ClawScript : MonoBehaviour
             float zNoise = (Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f);
             
             float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
-            float lerpSpeed = 20f;
 
-            Vector3 newPosition = clawTransform.localPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
-            Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.localPosition = lerpedNewPosition;
+            Vector3 newPosition = inputPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
+            clawTransform.localPosition = newPosition;
 
 
             // Container for movement
@@ -84,12 +92,8 @@ public class ClawScript : MonoBehaviour
 
             yield return null;
         }
-    }
 
-    public void freezeClaw()
-    {
-        Rigidbody clawRigidbody = GetComponent<Rigidbody>();
-        clawRigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        clawShakeCoroutine = null;
     }
 }
 
@@ -98,3 +102,5 @@ public class ClawScript : MonoBehaviour
 // clawTransform.localPosition = startPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
 // float xNoise = ((Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f) * 2);
 // float zNoise = ((Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f) * 2);
+//Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
+//Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);

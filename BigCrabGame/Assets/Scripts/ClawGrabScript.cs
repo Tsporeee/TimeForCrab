@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ClawGrabScript : MonoBehaviour
 {
@@ -12,8 +14,16 @@ public class ClawGrabScript : MonoBehaviour
     // Passing other scripts
     public IngredientGrabScript ingredientGrabScript;
     public ClawScript clawScript;
+    public Animator animator;
 
+    private bool isDipping;
 
+    void Start()
+    {
+        //animator = GetComponent<Animator>();
+        //animator.SetTrigger("Dip");
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -54,13 +64,16 @@ public class ClawGrabScript : MonoBehaviour
 
     IEnumerator dipClaw()
     {
+        clawScript.StopShakeClaw();
+       
         float elapsedTime = 0f;
-        float dipHalfDuration = 2f;
+        float dipDownDuration = 2f;
+        float dipUpDuration = 0.5f;
 
         freezeClaw();
         Vector3 startPosition = clawTransform.position;
 
-        while (elapsedTime < dipHalfDuration)
+        while (elapsedTime < dipDownDuration)
         {
             elapsedTime += Time.deltaTime;
 
@@ -78,7 +91,7 @@ public class ClawGrabScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         elapsedTime = 0f;
 
-        while (elapsedTime < dipHalfDuration)
+        while (elapsedTime < dipUpDuration)
         {
             elapsedTime += Time.deltaTime;
 
@@ -86,7 +99,7 @@ public class ClawGrabScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 1.5f, 0f);
+            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 2f, 0f);
             Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
             clawTransform.localPosition = lerpedUpPosition;
 
