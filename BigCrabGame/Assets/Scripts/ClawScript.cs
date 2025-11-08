@@ -10,8 +10,8 @@ public class ClawScript : MonoBehaviour
     public Transform clawTransform = null;
     public float horizontalMaxPosition = 2f;
     public float verticalMaxPosition = 2f;
-    public float speed = 1f;
-    public Vector3 currentPosition;
+    public float speed = 5f;
+
 
     // Shaking
     public float shakeDuration = 5f;
@@ -36,9 +36,11 @@ public class ClawScript : MonoBehaviour
         // Vertical and horizontal, but in game: moving x and z
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
-        clawTransform.localPosition += (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
 
-        currentPosition = clawTransform.localPosition;
+        float lerpSpeed = 20f;
+        Vector3 newPosition = clawTransform.localPosition + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
+        Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
+        clawTransform.localPosition = lerpedNewPosition;
 
     }
     
@@ -61,13 +63,16 @@ public class ClawScript : MonoBehaviour
             
             // -0.5f centers noise
             // Perlin noise makes a bit of a drift but better than the super jittery other options for now
-            // If we have time: FIX IT
             float xNoise = (Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f);
             float zNoise = (Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f);
             
             float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
+            float lerpSpeed = 20f;
 
-            clawTransform.localPosition = currentPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
+            Vector3 newPosition = clawTransform.localPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
+            Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
+            clawTransform.localPosition = lerpedNewPosition;
+
 
             // Container for movement
             clawTransform.localPosition = new Vector3(

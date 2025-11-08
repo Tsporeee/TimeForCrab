@@ -8,15 +8,31 @@ public class ClawGrabScript : MonoBehaviour
     [SerializeField] private Transform clawTransform;
     [SerializeField] private Transform clawGrabPointTransform;
     [SerializeField] private LayerMask clawLayerMask;
-    
+
+    public IngredientGrabScript ingredientGrabScript;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (ingredientGrabScript != null)
+            {
+                ingredientGrabScript.Drop();
+                ingredientGrabScript = null;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
         {
             ingredientGrabScript.Grab(clawGrabPointTransform);
+            this.ingredientGrabScript = ingredientGrabScript;
         }
     }
 
+    
 
 }
 

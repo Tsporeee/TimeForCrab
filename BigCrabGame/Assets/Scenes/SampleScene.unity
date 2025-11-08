@@ -1254,7 +1254,7 @@ Transform:
   m_GameObject: {fileID: 831208177}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23180446, y: -0, z: -0, w: 0.9727624}
-  m_LocalPosition: {x: 0.176, y: 0.12241179, z: 0.8633876}
+  m_LocalPosition: {x: 0.1, y: 0.12241179, z: 0.8633876}
   m_LocalScale: {x: 2, y: 1.6619799, z: 1.113204}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   clawGrabPointTransform: {fileID: 831208178}
   clawLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!65 &931501365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1691,8 +1691,7 @@ MonoBehaviour:
   clawTransform: {fileID: 931501363}
   horizontalMaxPosition: 2
   verticalMaxPosition: 0.5
-  speed: 1
-  currentPosition: {x: 0, y: 0, z: 0}
+  speed: 3
   shakeDuration: 5
   curve:
     serializedVersion: 2
@@ -1707,8 +1706,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.047314204
-      value: 0.13674833
+      time: 0.19151236
+      value: 0.47357965
       inSlope: 0.0057820044
       outSlope: 0.0057820044
       tangentMode: 0
@@ -1716,8 +1715,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.19837084
     - serializedVersion: 3
-      time: 0.07651012
-      value: 0.0025284307
+      time: 0.3096878
+      value: 0.008756331
       inSlope: -0.008960587
       outSlope: -0.008960587
       tangentMode: 0
@@ -1725,8 +1724,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.22483741
     - serializedVersion: 3
-      time: 0.098097265
-      value: 0.18451741
+      time: 0.39706552
+      value: 0.63901114
       inSlope: 0.005160424
       outSlope: 0.005160424
       tangentMode: 0
@@ -1734,8 +1733,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.10325318
     - serializedVersion: 3
-      time: 0.13019066
-      value: 0.004142959
+      time: 0.526969
+      value: 0.014347679
       inSlope: -0.011558332
       outSlope: -0.011558332
       tangentMode: 0
@@ -1743,8 +1742,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.07560254
     - serializedVersion: 3
-      time: 0.15611373
-      value: 0.09432561
+      time: 0.6318971
+      value: 0.32666352
       inSlope: -0.024263352
       outSlope: -0.024263352
       tangentMode: 0
@@ -1752,8 +1751,8 @@ MonoBehaviour:
       inWeight: 0.28613904
       outWeight: 0.2079179
     - serializedVersion: 3
-      time: 0.17778072
-      value: 0.0020252313
+      time: 0.7195979
+      value: 0.0070136767
       inSlope: -0.031204712
       outSlope: -0.031204712
       tangentMode: 0
@@ -1761,8 +1760,8 @@ MonoBehaviour:
       inWeight: 0.3914886
       outWeight: 0.5908595
     - serializedVersion: 3
-      time: 0.20207636
-      value: 0.07715746
+      time: 0.8179386
+      value: 0.26720774
       inSlope: 0.00519236
       outSlope: 0.00519236
       tangentMode: 0
@@ -1770,8 +1769,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 1
     - serializedVersion: 3
-      time: 0.22081928
-      value: 0.0008151792
+      time: 0.8938039
+      value: 0.002823086
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1779,8 +1778,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.24169351
-      value: 0.14336923
+      time: 0.97829586
+      value: 0.4965089
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1788,8 +1787,44 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.25654706
-      value: 0.0015353773
+      time: 1.038418
+      value: 0.00531724
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.1682289
+      value: 0.19440204
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.2706239
+      value: 0.00000036353674
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.4262295
+      value: 0.0753161
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.5520688
+      value: 0.011892181
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2553,7 +2588,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1500144428

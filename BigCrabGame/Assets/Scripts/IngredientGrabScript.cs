@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IngredientGrabScript : MonoBehaviour
@@ -17,13 +18,22 @@ public class IngredientGrabScript : MonoBehaviour
 
         // Update 
         this.clawGrabPointTransform = clawGrabPointTransform;
+        ingredientRigidbody.useGravity = false;
+    }
+
+    public void Drop()
+    {
+        this.clawGrabPointTransform = null;
+        ingredientRigidbody.useGravity = true;
     }
 
     private void FixedUpdate()
     {
+        float lerpSpeed = 15f;
         if (clawGrabPointTransform != null)
         {
-            ingredientRigidbody.MovePosition(clawGrabPointTransform.position);
+            Vector3 newPosition = Vector3.Lerp(transform.position, clawGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+            ingredientRigidbody.MovePosition(newPosition);
         }
     }
 
