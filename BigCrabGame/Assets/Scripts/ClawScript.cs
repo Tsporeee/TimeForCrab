@@ -12,7 +12,7 @@ public class ClawScript : MonoBehaviour
     public Transform clawGrabPointTransform;
     public float horizontalMaxPosition = 2f;
     public float verticalMaxPosition = 2f;
-    public float speed = 5f;
+    public float speed = 2f;
 
     // Passing other scripts
     //private IngredientGrabScript ingredientGrabScript;
@@ -154,8 +154,8 @@ public class ClawScript : MonoBehaviour
         //StopShakeClaw();
 
         float elapsedTime = 0f;
-        float dipDownDuration = 1f;
-        float dipUpDuration = 0.5f;
+        float dipDownDuration = 0.5f;
+        float dipUpDuration = 0.25f;
 
         Vector3 upPosition = transform.position;
         Vector3 downPosition = transform.position + new Vector3(0f, -1.2f, 0f);
