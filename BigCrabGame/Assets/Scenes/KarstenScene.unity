@@ -2308,8 +2308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clawTransform: {fileID: 1294282153}
   clawGrabPointTransform: {fileID: 0}
-  horizontalMaxPosition: 2
-  verticalMaxPosition: 0.5
   speed: 3
   animator: {fileID: 0}
   shakeDuration: 5
@@ -2638,6 +2636,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572347403973171223, guid: 036112361f79c434db4e76cd7ab2dd91,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3311f82058d7c9647ba1a6afc4352c53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2824,6 +2827,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572347403973171223, guid: 036112361f79c434db4e76cd7ab2dd91,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3311f82058d7c9647ba1a6afc4352c53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4611,6 +4619,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572347403973171223, guid: 036112361f79c434db4e76cd7ab2dd91,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3311f82058d7c9647ba1a6afc4352c53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4642,17 +4655,17 @@ PrefabInstance:
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.81367874
       objectReference: {fileID: 0}
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.5813148
       objectReference: {fileID: 0}
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
@@ -4667,7 +4680,7 @@ PrefabInstance:
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -71.086
       objectReference: {fileID: 0}
     - target: {fileID: 1330814532974205158, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
         type: 3}
@@ -4679,6 +4692,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onigiri
       objectReference: {fileID: 0}
+    - target: {fileID: 4902393363171931003, guid: 725675bd3f4e9b14c8b7417daf8a71dd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b1dd271ad0fb504d812e4442cf5c7e7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4760,6 +4778,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 223112023610991752, guid: a3a55403b856d514c91f384eefeba279,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5114c6436f79d61429a1e55d2e017615, type: 2}
     - target: {fileID: 3748277086969625328, guid: a3a55403b856d514c91f384eefeba279,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4883,6 +4906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SushiRoll1
       objectReference: {fileID: 0}
+    - target: {fileID: 5625807180496053631, guid: 72648c25d3b22604c95a263f484d18c0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3fb961297da132443a63dc0d42903480, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
