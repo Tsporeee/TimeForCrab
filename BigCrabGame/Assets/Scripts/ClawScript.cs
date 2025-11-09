@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Unity.Mathematics;
+using UnityEditor;
+
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +12,7 @@ using UnityEngine.EventSystems;
 public class ClawScript : MonoBehaviour
 {
     public Transform clawGrabPointTransform;
-    public float horizontalMaxPosition = 2f;
+    public float horizontalMaxPosition = 2.5f;
     public float verticalMaxPosition = 2f;
     public float speed = 2f;
 
@@ -67,15 +69,6 @@ public class ClawScript : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
-    //    {
-    //        ingredientGrabScript.Grab(clawGrabPointTransform);
-    //        this.ingredientGrabScript = ingredientGrabScript;
-    //    }
-    //}
-
     public void moveClaw()
     {
         
@@ -93,60 +86,6 @@ public class ClawScript : MonoBehaviour
         Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
 
     }
-    
-    //public void shakeClawCheckExecute()
-    //{
-    //    // Move this to a normal method to invoke repeating
-    //    // Dont restart if theres already a shake running
-    //    if (clawShakeCoroutine == null)
-    //    clawShakeCoroutine = StartCoroutine(shakeClaw());
-    //}
-
-    //public void StopShakeClaw()
-    //{
-    //    if (clawShakeCoroutine != null)
-    //    {
-    //        StopCoroutine(clawShakeCoroutine);
-    //        clawShakeCoroutine = null;
-    //    }
-    //}
-
-    //IEnumerator shakeClaw()
-    //{
-        
-    //    float elapsedTime = 0f;
-    //    float shakeSpeed = 3f;
-    //    float localTime = 0f;
-
-    //    while (elapsedTime < shakeDuration)
-    //    {
-    //        elapsedTime += Time.deltaTime;
-    //        localTime += Time.deltaTime * shakeSpeed;
-
-    //        // -0.5f centers noise
-    //        // Perlin noise makes a bit of a drift but better than the  jittery other options for now
-    //        // Still affected by frame rates.
-    //        float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
-    //        float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
-
-    //        float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
-
-    //        Vector3 initialPosition = transform.position;
-    //        Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
-    //        transform.position = newPosition;
-
-
-    //        // Container for movement but this time centered around the object not (0,0) 
-    //        transform.position = new Vector3(
-    //        Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
-    //        transform.position.y,
-    //        Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
-
-    //        yield return null;
-    //    }
-
-    //    clawShakeCoroutine = null;
-    //}
     IEnumerator dipClaw()
     {
 
@@ -157,13 +96,8 @@ public class ClawScript : MonoBehaviour
         float dipDownDuration = 0.5f;
         float dipUpDuration = 0.25f;
 
-        Vector3 upPosition = transform.position;
-        Vector3 downPosition = transform.position + new Vector3(0f, -1.2f, 0f);
-
-        // float upSpeed = Vector3.Distance(upPosition, downPosition) / dipDownDuration;
-        // float downSpeed = Vector3.Distance(upPosition, downPosition) / dipUpDuration;
-
-        //float startPositionY = transform.position.y;
+        Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
+        Vector3 downPosition = upPosition + new Vector3(0f, -1.2f, 0f);
 
         isDipping = true;
         disableMovement = true;
@@ -175,19 +109,8 @@ public class ClawScript : MonoBehaviour
             // the claw stop shaking is unessesary but dont have enough time/know-how to fully make a good working timer
             //StopShakeClaw();
             elapsedTime += Time.deltaTime;
-            float frameRateIndieTime = (elapsedTime / dipDownDuration);
+            float frameRateIndieTime = Mathf.Clamp01(elapsedTime / dipDownDuration);
             transform.position = Vector3.Lerp(upPosition, downPosition, frameRateIndieTime);
-
-            // could do this later
-            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            //Calculate speed using PHYSICS!!! velocity = distance/time
-
-            // Base the down position on your position already pls
-            // Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 2f, transform.position.z);
-            // Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
-            // transform.position = Vector3.MoveTowards(transform.position, downPosition, upSpeed * Time.deltaTime);
-            //transform.position = lerpedDownPosition;
-
             yield return null;
         }
 
@@ -201,24 +124,18 @@ public class ClawScript : MonoBehaviour
         {
             //StopShakeClaw();
             elapsedTime += Time.deltaTime;
-            float frameRateIndieTime = (elapsedTime / dipUpDuration);
+            float frameRateIndieTime = Mathf.Clamp01(elapsedTime / dipUpDuration);
             transform.position = Vector3.Lerp(downPosition, upPosition, frameRateIndieTime);
-
-            // could do this later
-            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            //Calculate speed using PHYSICS!!! velocity = distance/time
-            // Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
-            // Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
-            // transform.position = Vector3.MoveTowards(transform.position, upPosition, downSpeed * Time.deltaTime);
-            //transform.position = lerpedUpPosition;
-
             yield return null;
         }
 
         // just in case something goes wrong it will not break the game
-        transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
-        isDipping = false;
+        //transform.position = new Vector3(transform.position.x, upPosition.y, transform.position.z); 
+        transform.position = upPosition;
         disableMovement = false;
+
+        yield return new WaitForSeconds(0.5f);
+        isDipping = false;
         //shakeClawCheckExecute();
 
     }
@@ -231,3 +148,66 @@ public class ClawScript : MonoBehaviour
 // float zNoise = ((Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f) * 2);
 //Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
 //Vector3 lerpedNewPosition = Vector3.Lerp(clawTransform.localPosition, newPosition, Time.deltaTime * lerpSpeed);
+
+//public void shakeClawCheckExecute()
+//{
+//    // Move this to a normal method to invoke repeating
+//    // Dont restart if theres already a shake running
+//    if (clawShakeCoroutine == null)
+//    clawShakeCoroutine = StartCoroutine(shakeClaw());
+//}
+
+//public void StopShakeClaw()
+//{
+//    if (clawShakeCoroutine != null)
+//    {
+//        StopCoroutine(clawShakeCoroutine);
+//        clawShakeCoroutine = null;
+//    }
+//}
+
+//IEnumerator shakeClaw()
+//{
+
+//    float elapsedTime = 0f;
+//    float shakeSpeed = 3f;
+//    float localTime = 0f;
+
+//    while (elapsedTime < shakeDuration)
+//    {
+//        elapsedTime += Time.deltaTime;
+//        localTime += Time.deltaTime * shakeSpeed;
+
+//        // -0.5f centers noise
+//        // Perlin noise makes a bit of a drift but better than the  jittery other options for now
+//        // Still affected by frame rates.
+//        float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
+//        float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
+
+//        float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
+
+//        Vector3 initialPosition = transform.position;
+//        Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
+//        transform.position = newPosition;
+
+
+//        // Container for movement but this time centered around the object not (0,0) 
+//        transform.position = new Vector3(
+//        Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
+//        transform.position.y,
+//        Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
+
+//        yield return null;
+//    }
+
+//    clawShakeCoroutine = null;
+//}
+
+//private void OnTriggerEnter(Collider other)
+//{
+//    if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
+//    {
+//        ingredientGrabScript.Grab(clawGrabPointTransform);
+//        this.ingredientGrabScript = ingredientGrabScript;
+//    }
+//}
