@@ -81,7 +81,6 @@ public class ClawGrabScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         elapsedTime = 0f;
 
-        boxCollider.enabled = false;
         while (elapsedTime < dipUpDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -90,7 +89,7 @@ public class ClawGrabScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 2f, 0f);
+            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 4f, 0f);
             Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
             clawTransform.localPosition = lerpedUpPosition;
 
@@ -98,7 +97,6 @@ public class ClawGrabScript : MonoBehaviour
         }
 
         isDipping = false;
-        boxCollider.enabled = true;
 
     }
 }
