@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 56375065}
   - component: {fileID: 56375064}
   - component: {fileID: 56375063}
+  - component: {fileID: 56375067}
   m_Layer: 0
   m_Name: Speech
   m_TagString: Untagged
@@ -387,6 +388,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 180}
+--- !u!114 &56375067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56375062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc359b517cc77f4419cabd8adc0a9b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerScript: {fileID: 0}
+  timer: 5
 --- !u!1001 &59966145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2035,8 +2050,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9031993, y: 0.8098264, z: 0.9493794}
-  m_Center: {x: -0.04840047, y: 0.65985674, z: -0.02531026}
+  m_Size: {x: 1.3406534, y: 0.8098264, z: 1.4041804}
+  m_Center: {x: -0.046376806, y: 0.65985674, z: 0.015458276}
 --- !u!114 &282868316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11676,8 +11691,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.94541556, y: 0.5838396, z: 1}
-  m_Center: {x: -0.47438884, y: 0.20808028, z: 0.0000000022991244}
+  m_Size: {x: 1.319868, y: 0.5838396, z: 1.3649749}
+  m_Center: {x: -0.6616182, y: 0.20808028, z: 0.18248823}
 --- !u!114 &1617262899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12121,8 +12136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.32634893, y: 0.048661843, z: 0.31454992}
-  m_Center: {x: -0.33683065, y: -0.4289287, z: 0.41325623}
+  m_Size: {x: 0.3863359, y: 0.048661843, z: 0.42150018}
+  m_Center: {x: -0.36682588, y: -0.4289311, z: 0.42019787}
 --- !u!1001 &1677892794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13124,8 +13139,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8439269, y: 0.5838396, z: 0.94672227}
-  m_Center: {x: 0.48836648, y: 0.20808028, z: 0.02663865}
+  m_Size: {x: 1.2658209, y: 0.5838396, z: 1.3303852}
+  m_Center: {x: 0.5460668, y: 0.20808028, z: 0.21846993}
 --- !u!1001 &1975136644
 PrefabInstance:
   m_ObjectHideFlags: 0
