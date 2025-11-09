@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class ClawGrabScript : MonoBehaviour
 {
 
-    [SerializeField] private Transform clawTransform;
+    //[SerializeField] private Transform clawTransform;
     [SerializeField] private Transform clawGrabPointTransform;
-    [SerializeField] private LayerMask clawLayerMask;
+    //[SerializeField] private LayerMask clawLayerMask;
 
-    // Passing other scripts
+    //// Passing other scripts
     public IngredientGrabScript ingredientGrabScript;
-    public ClawScript clawScript;
-    public Animator animator;
+    public bool isHolding = false;
+    //public ClawScript clawScript;
+    //public Animator animator;
 
-    private bool isDipping;
+    //private bool isDipping;
 
     void Start()
     {
@@ -31,74 +33,90 @@ public class ClawGrabScript : MonoBehaviour
             if (ingredientGrabScript != null)
             {
                 ingredientGrabScript.Drop();
+                isHolding = false;
                 ingredientGrabScript = null;
-            }
-            else if (isDipping == false)
-            {
-                StartCoroutine(dipClaw());
             }
         }
 
-    }
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+            //    if (ingredientGrabScript != null)
+            //    {
+            //        ingredientGrabScript.Drop();
+            //        ingredientGrabScript = null;
+            //    }
+            //    else if (!isDipping)
+            //    {
+            //        StartCoroutine(dipClaw());
+            //    }
+            //}
+
+        }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
+        if (other.CompareTag("Ingredient"))
+        //other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
         {
+            GameObject ingredient = other.gameObject;
+            ingredientGrabScript = ingredient.GetComponent<IngredientGrabScript>();
             ingredientGrabScript.Grab(clawGrabPointTransform);
-            this.ingredientGrabScript = ingredientGrabScript;
+            isHolding = true;
+            //this.ingredientGrabScript = ingredientGrabScript;
         }
     }
 
-    IEnumerator dipClaw()
-    {
+    //IEnumerator dipClaw()
+    //{
 
-        BoxCollider boxCollider = GetComponent<BoxCollider>();
-        clawScript.StopShakeClaw();
-       
-        float elapsedTime = 0f;
-        float dipDownDuration = 1f;
-        float dipUpDuration = 0.5f;
+    //    //BoxCollider boxCollider = GetComponent<BoxCollider>();
+    //    clawScript.StopShakeClaw();
 
-        Vector3 startPosition = clawTransform.position;
-        isDipping = true;
+    //    float elapsedTime = 0f;
+    //    float dipDownDuration = 1f;
+    //    float dipUpDuration = 0.5f;
 
-        while (elapsedTime < dipDownDuration)
-        {
-            elapsedTime += Time.deltaTime;
+    //    float startPositionY = clawTransform.localPosition.y;
 
-            // could do this later
-            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float lerpSpeed = 2f;
+    //    isDipping = true;
 
-            Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -1f, 0f);
-            Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.localPosition, downPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.localPosition = lerpedDownPosition;
+    //    while (elapsedTime < dipDownDuration)
+    //    {
+    //        elapsedTime += Time.deltaTime;
 
-            yield return null;
-        }
+    //        // could do this later
+    //        // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
+    //        float lerpSpeed = 2f;
 
-        yield return new WaitForSeconds(0.5f);
-        elapsedTime = 0f;
+    //        Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -1f, 0f);
+    //        Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.localPosition, downPosition, Time.deltaTime * lerpSpeed);
+    //        clawTransform.localPosition = lerpedDownPosition;
 
-        while (elapsedTime < dipUpDuration)
-        {
-            elapsedTime += Time.deltaTime;
+    //        yield return null;
+    //    }
 
-            // could do this later
-            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float lerpSpeed = 2f;
+    //    yield return new WaitForSeconds(0.5f);
+    //    elapsedTime = 0f;
 
-            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 4f, 0f);
-            Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.localPosition = lerpedUpPosition;
+    //    while (elapsedTime < dipUpDuration)
+    //    {
+    //        elapsedTime += Time.deltaTime;
 
-            yield return null;
-        }
+    //        // could do this later
+    //        // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
+    //        float lerpSpeed = 2f;
 
-        isDipping = false;
+    //        Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 2f, 0f);
+    //        Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
+    //        clawTransform.localPosition = lerpedUpPosition;
 
-    }
+    //        yield return null;
+    //    }
+
+    //    clawTransform.localPosition = new Vector3(clawTransform.localPosition.x, startPositionY, clawTransform.localPosition.z);
+    //    isDipping = false;
+
+    //}
 }
 
 // Graveyard

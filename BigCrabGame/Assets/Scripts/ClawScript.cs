@@ -15,6 +15,16 @@ public class ClawScript : MonoBehaviour
     public float speed = 5f;
     private Vector3 inputPosition;
 
+    [SerializeField] private Transform clawGrabPointTransform;
+    [SerializeField] private LayerMask clawLayerMask;
+
+    // Passing other scripts
+    private IngredientGrabScript ingredientGrabScript;
+    public ClawScript clawScript;
+    public Animator animator;
+
+    private bool isDipping;
+
 
     // Shaking
     public float shakeDuration = 5f;
@@ -30,9 +40,34 @@ public class ClawScript : MonoBehaviour
         InvokeRepeating(nameof(shakeClawMethod), 0f, 5f);
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            //if (ingredientGrabScript != null)
+                //{
+                //    ingredientGrabScript.Drop();
+                //    ingredientGrabScript = null;
+                //}
+                if (!isDipping)
+            {
+                StartCoroutine(dipClaw());
+            }
+        }
+    }
+
     public void FixedUpdate()
     {
         moveClaw();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
+        {
+            ingredientGrabScript.Grab(clawGrabPointTransform);
+            this.ingredientGrabScript = ingredientGrabScript;
+        }
     }
 
     public void moveClaw()
@@ -94,6 +129,57 @@ public class ClawScript : MonoBehaviour
         }
 
         clawShakeCoroutine = null;
+    }
+    IEnumerator dipClaw()
+    {
+
+        //BoxCollider boxCollider = GetComponent<BoxCollider>();
+        clawScript.StopShakeClaw();
+
+        float elapsedTime = 0f;
+        float dipDownDuration = 1f;
+        float dipUpDuration = 0.5f;
+
+        float startPositionY = clawTransform.position.y;
+
+        isDipping = true;
+
+        while (elapsedTime < dipDownDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // could do this later
+            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
+            float lerpSpeed = 2f;
+
+            Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -1f, 0f);
+            Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.localPosition, downPosition, Time.deltaTime * lerpSpeed);
+            clawTransform.localPosition = lerpedDownPosition;
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        elapsedTime = 0f;
+
+        while (elapsedTime < dipUpDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // could do this later
+            // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
+            float lerpSpeed = 2f;
+
+            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 2f, 0f);
+            Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
+            clawTransform.localPosition = lerpedUpPosition;
+
+            yield return null;
+        }
+
+        clawTransform.position = new Vector3(clawTransform.position.x, startPositionY, clawTransform.position.z);
+        isDipping = false;
+
     }
 }
 
