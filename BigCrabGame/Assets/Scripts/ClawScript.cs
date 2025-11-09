@@ -157,6 +157,8 @@ public class ClawScript : MonoBehaviour
 
         while (elapsedTime < dipDownDuration)
         {
+            
+            // the claw stop shaking is unessesary but i dont have enough time/know-how to fully make a good working timer so uh...
             StopShakeClaw();
             elapsedTime += Time.deltaTime;
             float frameRateIndieTime = (elapsedTime / dipDownDuration);

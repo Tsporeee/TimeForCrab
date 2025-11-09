@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,6 +8,8 @@ public class IngredientGrabScript : MonoBehaviour
 {
     private Rigidbody ingredientRigidbody;
     private Transform clawGrabPointTransform;
+
+    public string ingredientName; 
 
     private void Awake()
     {
@@ -36,6 +39,12 @@ public class IngredientGrabScript : MonoBehaviour
             Vector3 newPosition = Vector3.Lerp(transform.position, clawGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             ingredientRigidbody.MovePosition(newPosition);
         }
+    }
+
+    // Getter
+    public String getName()
+    {
+        return ingredientName;
     }
 
 }

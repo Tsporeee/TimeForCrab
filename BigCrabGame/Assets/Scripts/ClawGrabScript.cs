@@ -58,10 +58,12 @@ public class ClawGrabScript : MonoBehaviour
         if (other.CompareTag("Ingredient"))
         //other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
         {
-            GameObject ingredient = other.gameObject;
-            ingredientGrabScript = ingredient.GetComponent<IngredientGrabScript>();
+            //GameObject ingredient = other.gameObject;
+            //ingredientGrabScript = ingredient.GetComponent<IngredientGrabScript>();
             if (!isHolding)
             {
+                GameObject ingredient = other.gameObject;
+                ingredientGrabScript = ingredient.GetComponent<IngredientGrabScript>();
                 ingredientGrabScript.Grab(clawGrabPointTransform);
                 isHolding = true;
             }
