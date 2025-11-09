@@ -1549,6 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerScript: {fileID: 1044664544}
+  timer: 5
 --- !u!1001 &189980237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4498,7 +4499,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8a8de56b06d931a4aaa0e70c981151da, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ec2c009ce153a342abc7a5fdb689547, type: 2}
     - target: {fileID: -8679921383154817045, guid: 12582880d5170944e9c45d5e76e55eed,
         type: 3}
       propertyPath: m_LocalScale.x
