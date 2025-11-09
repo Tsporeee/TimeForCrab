@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: TamagoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &317461479
@@ -7373,6 +7373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateScript: {fileID: 2142161088}
+  nextLevel: 1
   hasCelebrated: 0
 --- !u!1001 &1077840519
 PrefabInstance:
@@ -11386,7 +11387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiFishEggs
+  correctFood: Onigiri
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &1621580007
@@ -11740,7 +11741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: Onigiri
+  correctFood: SushiFishEggs
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1675604070
