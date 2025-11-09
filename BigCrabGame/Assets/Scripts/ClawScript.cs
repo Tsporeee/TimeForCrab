@@ -14,7 +14,6 @@ public class ClawScript : MonoBehaviour
     public float horizontalMaxPosition = 2f;
     public float verticalMaxPosition = 2f;
     public float speed = 5f;
-    private Vector3 inputPosition;
 
     // Passing other scripts
     //private IngredientGrabScript ingredientGrabScript;
@@ -34,7 +33,7 @@ public class ClawScript : MonoBehaviour
     {
         
         // Fake infinite loop
-        InvokeRepeating(nameof(shakeClawMethod), 0f, 5f);
+        InvokeRepeating(nameof(shakeClawMethod), 0f, 2f);
     }
 
     public void Update()
@@ -74,8 +73,7 @@ public class ClawScript : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
 
-        inputPosition = clawTransform.position + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
-        clawTransform.position = inputPosition;
+        transform.position += new Vector3(horz, 0f, vert) * speed * Time.deltaTime;
 
     }
     
@@ -83,17 +81,19 @@ public class ClawScript : MonoBehaviour
     {
         
         // Move this to a normal method to invoke repeating
+        // Dont restart if theres already a shake running
+        if (clawShakeCoroutine == null)
         clawShakeCoroutine = StartCoroutine(shakeClaw());
     }
 
-    public void StopShakeClaw()
-    {
-        if (clawShakeCoroutine != null)
-        {
-            StopCoroutine(clawShakeCoroutine);
-            clawShakeCoroutine = null;
-        }
-    }
+    // public void StopShakeClaw()
+    // {
+    //     if (clawShakeCoroutine != null)
+    //     {
+    //         StopCoroutine(clawShakeCoroutine);
+    //         clawShakeCoroutine = null;
+    //     }
+    // }
 
     IEnumerator shakeClaw()
     {
@@ -112,8 +112,8 @@ public class ClawScript : MonoBehaviour
             
             float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
 
-            Vector3 newPosition = inputPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
-            clawTransform.position = newPosition;
+            Vector3 newPosition = transform.position + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
+            transform.position = newPosition;
 
 
             // Container for movement
@@ -131,13 +131,13 @@ public class ClawScript : MonoBehaviour
     {
 
         //BoxCollider boxCollider = GetComponent<BoxCollider>();
-        StopShakeClaw();
+        //StopShakeClaw();
 
         float elapsedTime = 0f;
         float dipDownDuration = 1f;
         float dipUpDuration = 0.5f;
 
-        float startPositionY = clawTransform.position.y;
+        float startPositionY = transform.position.y;
 
         isDipping = true;
 
@@ -149,9 +149,10 @@ public class ClawScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 downPosition = clawTransform.position + new Vector3(0f, -1f, 0f);
-            Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.position, downPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.position = lerpedDownPosition;
+            // Base the down position on your position already pls
+            Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 1f, transform.position.z);
+            Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
+            transform.position = lerpedDownPosition;
 
             yield return null;
         }
@@ -167,14 +168,15 @@ public class ClawScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 upPosition = clawTransform.position + new Vector3(0f, 2f, 0f);
-            Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.position, upPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.position = lerpedUpPosition;
+            Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
+            Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
+            transform.position = lerpedUpPosition;
 
             yield return null;
         }
 
-        clawTransform.position = new Vector3(clawTransform.position.x, startPositionY, clawTransform.position.z);
+        // Really just in case something goes wrong
+        transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
         isDipping = false;
 
     }
