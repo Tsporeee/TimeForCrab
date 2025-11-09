@@ -24,7 +24,7 @@ public class ClawScript : MonoBehaviour
     private float startPositionY;
 
     // Shaking
-    public float shakeDuration = 2f;
+    public float shakeDuration = 100f;
     public AnimationCurve curve;
 
     private Coroutine clawShakeCoroutine = null;
@@ -34,8 +34,8 @@ public class ClawScript : MonoBehaviour
     {
         
         startPositionY = transform.position.y;
-        // Fake infinite loop
-        InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 2f);
+        // Fake infinite loop.... still affected by frame rate..... also bad practice probably
+        InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 1f);
     }
 
     public void Update()
@@ -111,12 +111,14 @@ public class ClawScript : MonoBehaviour
             
             // -0.5f centers noise
             // Perlin noise makes a bit of a drift but better than the super jittery other options for now
+            // Still affected by frame rates........
             float xNoise = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
             float zNoise = Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f;
-            
-            float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
 
-            Vector3 newPosition = transform.position + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
+            float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
+
+            Vector3 initialPosition = transform.position;
+            Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
             transform.position = newPosition;
 
 
@@ -142,46 +144,56 @@ public class ClawScript : MonoBehaviour
         float dipUpDuration = 0.5f;
 
         Vector3 upPosition = transform.position;
-        Vector3 downPosition = transform.position + new Vector3(0f, -1.3f, 0f);
+        Vector3 downPosition = transform.position + new Vector3(0f, -1.2f, 0f);
+
+        // float upSpeed = Vector3.Distance(upPosition, downPosition) / dipDownDuration;
+        // float downSpeed = Vector3.Distance(upPosition, downPosition) / dipUpDuration;
 
         //float startPositionY = transform.position.y;
 
         isDipping = true;
         disableMovement = true;
         
+
         while (elapsedTime < dipDownDuration)
         {
             StopShakeClaw();
             elapsedTime += Time.deltaTime;
+            float frameRateIndieTime = (elapsedTime / dipDownDuration);
+            transform.position = Vector3.Lerp(upPosition, downPosition, frameRateIndieTime);
 
             // could do this later
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float speed = 10f;
-        
+            //Calculate speed using PHYSICS!!! velocity = distance/time
+
             // Base the down position on your position already pls
             // Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 2f, transform.position.z);
             // Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
-            transform.position = Vector3.MoveTowards(transform.position, downPosition, speed * Time.deltaTime);
+            // transform.position = Vector3.MoveTowards(transform.position, downPosition, upSpeed * Time.deltaTime);
             //transform.position = lerpedDownPosition;
-            
+
             yield return null;
         }
 
         yield return new WaitForSeconds(0.5f);
+        
+        // CLAWS ARE NOT SHAKING HERE!!!
+        StopShakeClaw();
         elapsedTime = 0f;
 
         while (elapsedTime < dipUpDuration)
         {
             StopShakeClaw();
             elapsedTime += Time.deltaTime;
+            float frameRateIndieTime = (elapsedTime / dipUpDuration);
+            transform.position = Vector3.Lerp(downPosition, upPosition, frameRateIndieTime);
 
             // could do this later
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float speed = 15f;
-
+            //Calculate speed using PHYSICS!!! velocity = distance/time
             // Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
             // Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
-            transform.position = Vector3.MoveTowards(transform.position, upPosition, speed * Time.deltaTime);
+            // transform.position = Vector3.MoveTowards(transform.position, upPosition, downSpeed * Time.deltaTime);
             //transform.position = lerpedUpPosition;
 
             yield return null;

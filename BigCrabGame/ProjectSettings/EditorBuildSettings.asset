@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/KarstenScene.unity
     guid: f15be447dd0d7d842bb08e1ccb33dbde
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnotherBackUpAfterTheCuttingBoardInccident.unity
     guid: 5713458dae31cf44eadcff26a139bb3b
   m_configObjects: {}
