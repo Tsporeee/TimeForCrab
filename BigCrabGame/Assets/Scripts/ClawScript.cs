@@ -116,16 +116,18 @@ public class ClawScript : MonoBehaviour
         
         float elapsedTime = 0f;
         float shakeSpeed = 3f;
+        float localTime = 0f;
 
         while (elapsedTime < shakeDuration)
         {
             elapsedTime += Time.deltaTime;
-            
+            localTime += Time.deltaTime * shakeSpeed;
+
             // -0.5f centers noise
             // Perlin noise makes a bit of a drift but better than the  jittery other options for now
             // Still affected by frame rates.
-            float xNoise = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
-            float zNoise = Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f;
+            float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
+            float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
 
             float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
 
