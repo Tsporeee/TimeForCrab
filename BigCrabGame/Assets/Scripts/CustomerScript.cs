@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomerScript : MonoBehaviour
 {
 
     public PlateScript plateScript;
+    public int nextLevel;
     
     // Can change to get with a getter for privacy 
     public bool hasCelebrated;
@@ -47,5 +49,8 @@ public class CustomerScript : MonoBehaviour
                 yield return null;
             }
         }
+
+        SceneManager.LoadScene(nextLevel);
+
     }
 }
