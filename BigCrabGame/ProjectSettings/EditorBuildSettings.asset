@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 3e7c058deffdb524e934b2964043e4f2
+  - enabled: 1
     path: Assets/Scenes/KarstenScene.unity
     guid: f15be447dd0d7d842bb08e1ccb33dbde
   - enabled: 1
@@ -19,7 +22,7 @@ EditorBuildSettings:
     guid: e88ed9af906d1fe41bf285da080fcaba
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
-    guid: 7ec2d7b987542d94ab8c3a85a62f5815
+    guid: ff2e06f1e236fbe40aee853061e57f62
   - enabled: 0
     path: Assets/Scenes/AnotherBackUpAfterTheCuttingBoardInccident.unity
     guid: 5713458dae31cf44eadcff26a139bb3b
