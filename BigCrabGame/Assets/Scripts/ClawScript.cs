@@ -16,12 +16,14 @@ public class ClawScript : MonoBehaviour
 
     // Passing other scripts
     //private IngredientGrabScript ingredientGrabScript;
-    public Animator animator;
+    //public Animator animator;
+    public ClawGrabScript clawGrabScript;
 
     private bool isDipping;
     private bool disableMovement;
 
     private float startPositionY;
+    private Vector3 startPosition;
 
     // Shaking
     public float shakeDuration = 100f;
@@ -32,9 +34,12 @@ public class ClawScript : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        
+
+        // find a way to do this normally if we ever come back around to this 
         startPositionY = transform.position.y;
-        // Fake infinite loop.... still affected by frame rate..... also bad practice probably
+        startPosition = transform.position;
+       
+        // Fake infinite loop.... still affected by frame rate, bad practice probably
         InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 1f);
     }
 
@@ -47,7 +52,7 @@ public class ClawScript : MonoBehaviour
                 //    ingredientGrabScript.Drop();
                 //    ingredientGrabScript = null;
                 //}
-                if (!isDipping)
+                if (!isDipping && !clawGrabScript.isHolding)
             {
                 StartCoroutine(dipClaw());
             }
@@ -80,6 +85,13 @@ public class ClawScript : MonoBehaviour
 
         transform.position += new Vector3(horz, 0f, vert) * speed * Time.deltaTime;
 
+        // Container for movement but this time centered 
+        // needs fixing, it is duplicated and also the could be in a container script
+        transform.position = new Vector3(
+        Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
+        transform.position.y,
+        Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
+
     }
     
     public void shakeClawCheckExecute()
@@ -110,8 +122,8 @@ public class ClawScript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             
             // -0.5f centers noise
-            // Perlin noise makes a bit of a drift but better than the super jittery other options for now
-            // Still affected by frame rates........
+            // Perlin noise makes a bit of a drift but better than the  jittery other options for now
+            // Still affected by frame rates.
             float xNoise = Mathf.PerlinNoise(Time.time * shakeSpeed, 0f) - 0.5f;
             float zNoise = Mathf.PerlinNoise(0f, Time.time * shakeSpeed) - 0.5f;
 
@@ -122,11 +134,11 @@ public class ClawScript : MonoBehaviour
             transform.position = newPosition;
 
 
-            // Container for movement
-            //clawTransform.position = new Vector3(
-            //Mathf.Clamp(clawTransform.position.x, -horizontalMaxPosition, horizontalMaxPosition),
-            //clawTransform.position.y,
-            //Mathf.Clamp(clawTransform.position.z, -verticalMaxPosition, verticalMaxPosition));
+            // Container for movement but this time centered around the object not (0,0) 
+            transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
+            transform.position.y,
+            Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
 
             yield return null;
         }
@@ -158,7 +170,7 @@ public class ClawScript : MonoBehaviour
         while (elapsedTime < dipDownDuration)
         {
             
-            // the claw stop shaking is unessesary but i dont have enough time/know-how to fully make a good working timer so uh...
+            // the claw stop shaking is unessesary but dont have enough time/know-how to fully make a good working timer
             StopShakeClaw();
             elapsedTime += Time.deltaTime;
             float frameRateIndieTime = (elapsedTime / dipDownDuration);
@@ -179,7 +191,7 @@ public class ClawScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         
-        // CLAWS ARE NOT SHAKING HERE!!!
+        // another shake claw
         StopShakeClaw();
         elapsedTime = 0f;
 
@@ -201,7 +213,7 @@ public class ClawScript : MonoBehaviour
             yield return null;
         }
 
-        // Really just in case something goes wrong... (it often does)
+        // just in case something goes wrong it will not break the game
         transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
         isDipping = false;
         disableMovement = false;

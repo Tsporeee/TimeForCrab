@@ -6,7 +6,9 @@ public class CustomerScript : MonoBehaviour
 {
 
     public PlateScript plateScript;
-    private bool hasCelebrated;
+    
+    // Can change to get with a getter for privacy 
+    public bool hasCelebrated;
 
     void Update()
     {
@@ -23,7 +25,8 @@ public class CustomerScript : MonoBehaviour
 
         Vector3 downPosition = transform.position;
         Vector3 upPosition = transform.position + new Vector3(0f, 0.5f, 0f);
-
+        hasCelebrated = true;
+        
         for (int i = 0; i < 5; i++)
         {
             float elapsedTime = 0f;
@@ -44,7 +47,5 @@ public class CustomerScript : MonoBehaviour
                 yield return null;
             }
         }
-
-        hasCelebrated = true;
     }
 }

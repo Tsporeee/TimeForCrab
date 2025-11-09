@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// code monkey tutorial
 public class IngredientGrabScript : MonoBehaviour
 {
     private Rigidbody ingredientRigidbody;
     private Transform clawGrabPointTransform;
 
-    public string ingredientName; 
+    public string ingredientName;
 
     private void Awake()
     {

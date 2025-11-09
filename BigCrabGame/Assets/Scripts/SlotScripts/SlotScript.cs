@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class SlotScript : MonoBehaviour
 {
-    // Ok so were gonna have to have a collision check, an isfilled boolean, a check for if its the right ingredient?
+    // gonna have to have a collision check, an isfilled boolean, a check for if its the right ingredient
     // cant use a tag, add an instance variable and a setter
 
     public String correctFood;
     private GameObject filledFood;
 
-    // I think for now make it so the wrong one cant fill it
+    // Make it so the wrong one cant fill it
     public bool isFilled = false;
     public GameObject touchingFood = null;
 
@@ -28,13 +28,12 @@ public class SlotScript : MonoBehaviour
             isFilled = true;
             filledFood = other.gameObject;
             
-            // Freeze food n disable grabbing then snap
+            // Freeze food and disable grabbing then snap
             Rigidbody foodRigidBody = filledFood.GetComponent<Rigidbody>();
             foodRigidBody.isKinematic = true;
             ingredient.enabled = false;
             
-            //filledFood.transform.position = transform.position; snap is wayyy buggy just leave it for now
+            //filledFood.transform.position = transform.position; snap is buggy just leave it for now
         }
     }
-    
 }

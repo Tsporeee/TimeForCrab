@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
+// This does not have to be seperate 
 public class ClawGrabScript : MonoBehaviour
 {
 
@@ -25,7 +26,7 @@ public class ClawGrabScript : MonoBehaviour
         //animator = GetComponent<Animator>();
         //animator.SetTrigger("Dip");
     }
-    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -38,20 +39,20 @@ public class ClawGrabScript : MonoBehaviour
             }
         }
 
-            //if (Input.GetKeyDown(KeyCode.E))
-            //{
-            //    if (ingredientGrabScript != null)
-            //    {
-            //        ingredientGrabScript.Drop();
-            //        ingredientGrabScript = null;
-            //    }
-            //    else if (!isDipping)
-            //    {
-            //        StartCoroutine(dipClaw());
-            //    }
-            //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (ingredientGrabScript != null)
+        //    {
+        //        ingredientGrabScript.Drop();
+        //        ingredientGrabScript = null;
+        //    }
+        //    else if (!isDipping)
+        //    {
+        //        StartCoroutine(dipClaw());
+        //    }
+        //}
 
-        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
