@@ -26,10 +26,10 @@ public class ClawScript : MonoBehaviour
     private Vector3 startPosition;
 
     // Shaking
-    public float shakeDuration = 100f;
-    public AnimationCurve curve;
+    //public float shakeDuration = 100f;
+    //public AnimationCurve curve;
 
-    private Coroutine clawShakeCoroutine = null;
+    //private Coroutine clawShakeCoroutine = null;
 
     // Start is called before the first frame update
     public void Start()
@@ -40,7 +40,7 @@ public class ClawScript : MonoBehaviour
         startPosition = transform.position;
        
         // Fake infinite loop.... still affected by frame rate, bad practice probably
-        InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 1f);
+        //InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 1f);
     }
 
     public void Update()
@@ -94,59 +94,59 @@ public class ClawScript : MonoBehaviour
 
     }
     
-    public void shakeClawCheckExecute()
-    {
-        // Move this to a normal method to invoke repeating
-        // Dont restart if theres already a shake running
-        if (clawShakeCoroutine == null)
-        clawShakeCoroutine = StartCoroutine(shakeClaw());
-    }
+    //public void shakeClawCheckExecute()
+    //{
+    //    // Move this to a normal method to invoke repeating
+    //    // Dont restart if theres already a shake running
+    //    if (clawShakeCoroutine == null)
+    //    clawShakeCoroutine = StartCoroutine(shakeClaw());
+    //}
 
-    public void StopShakeClaw()
-    {
-        if (clawShakeCoroutine != null)
-        {
-            StopCoroutine(clawShakeCoroutine);
-            clawShakeCoroutine = null;
-        }
-    }
+    //public void StopShakeClaw()
+    //{
+    //    if (clawShakeCoroutine != null)
+    //    {
+    //        StopCoroutine(clawShakeCoroutine);
+    //        clawShakeCoroutine = null;
+    //    }
+    //}
 
-    IEnumerator shakeClaw()
-    {
+    //IEnumerator shakeClaw()
+    //{
         
-        float elapsedTime = 0f;
-        float shakeSpeed = 3f;
-        float localTime = 0f;
+    //    float elapsedTime = 0f;
+    //    float shakeSpeed = 3f;
+    //    float localTime = 0f;
 
-        while (elapsedTime < shakeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            localTime += Time.deltaTime * shakeSpeed;
+    //    while (elapsedTime < shakeDuration)
+    //    {
+    //        elapsedTime += Time.deltaTime;
+    //        localTime += Time.deltaTime * shakeSpeed;
 
-            // -0.5f centers noise
-            // Perlin noise makes a bit of a drift but better than the  jittery other options for now
-            // Still affected by frame rates.
-            float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
-            float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
+    //        // -0.5f centers noise
+    //        // Perlin noise makes a bit of a drift but better than the  jittery other options for now
+    //        // Still affected by frame rates.
+    //        float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
+    //        float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
 
-            float shakeStrength = 0.1f; //curve.Evaluate(elapsedTime / shakeDuration);
+    //        float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
 
-            Vector3 initialPosition = transform.position;
-            Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
-            transform.position = newPosition;
+    //        Vector3 initialPosition = transform.position;
+    //        Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
+    //        transform.position = newPosition;
 
 
-            // Container for movement but this time centered around the object not (0,0) 
-            transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
-            transform.position.y,
-            Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
+    //        // Container for movement but this time centered around the object not (0,0) 
+    //        transform.position = new Vector3(
+    //        Mathf.Clamp(transform.position.x, startPosition.x - horizontalMaxPosition, startPosition.x + horizontalMaxPosition),
+    //        transform.position.y,
+    //        Mathf.Clamp(transform.position.z, startPosition.z - verticalMaxPosition, startPosition.z + verticalMaxPosition));
 
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        clawShakeCoroutine = null;
-    }
+    //    clawShakeCoroutine = null;
+    //}
     IEnumerator dipClaw()
     {
 
@@ -173,7 +173,7 @@ public class ClawScript : MonoBehaviour
         {
             
             // the claw stop shaking is unessesary but dont have enough time/know-how to fully make a good working timer
-            StopShakeClaw();
+            //StopShakeClaw();
             elapsedTime += Time.deltaTime;
             float frameRateIndieTime = (elapsedTime / dipDownDuration);
             transform.position = Vector3.Lerp(upPosition, downPosition, frameRateIndieTime);
@@ -194,12 +194,12 @@ public class ClawScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         
         // another shake claw
-        StopShakeClaw();
+        //StopShakeClaw();
         elapsedTime = 0f;
 
         while (elapsedTime < dipUpDuration)
         {
-            StopShakeClaw();
+            //StopShakeClaw();
             elapsedTime += Time.deltaTime;
             float frameRateIndieTime = (elapsedTime / dipUpDuration);
             transform.position = Vector3.Lerp(downPosition, upPosition, frameRateIndieTime);
@@ -219,7 +219,7 @@ public class ClawScript : MonoBehaviour
         transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
         isDipping = false;
         disableMovement = false;
-        shakeClawCheckExecute();
+        //shakeClawCheckExecute();
 
     }
 }
