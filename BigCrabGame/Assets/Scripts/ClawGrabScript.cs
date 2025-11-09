@@ -21,6 +21,8 @@ public class ClawGrabScript : MonoBehaviour
 
     //private bool isDipping;
 
+    public AudioSource grabSound;
+
     void Start()
     {
         //animator = GetComponent<Animator>();
@@ -67,6 +69,7 @@ public class ClawGrabScript : MonoBehaviour
                 ingredientGrabScript = ingredient.GetComponent<IngredientGrabScript>();
                 ingredientGrabScript.Grab(clawGrabPointTransform);
                 isHolding = true;
+                grabSound.Play();
             }
             //this.ingredientGrabScript = ingredientGrabScript;
         }

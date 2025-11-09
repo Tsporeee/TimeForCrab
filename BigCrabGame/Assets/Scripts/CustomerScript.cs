@@ -12,6 +12,7 @@ public class CustomerScript : MonoBehaviour
     // Can change to get with a getter for privacy 
     public bool hasCelebrated;
     private Animator anim;
+    public AudioSource winSound;
 
     public void Start()
     {
@@ -28,6 +29,7 @@ public class CustomerScript : MonoBehaviour
     public void PlaySuccess()
     {
         anim.SetTrigger("Success");
+        winSound.Play();
         StartCoroutine(celebrate());
     }
     
