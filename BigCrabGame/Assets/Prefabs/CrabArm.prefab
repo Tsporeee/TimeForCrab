@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5972138905985129238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6312431084846714731}
+  m_Layer: 0
+  m_Name: ClawGrabPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6312431084846714731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972138905985129238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7149048, z: -0, w: -0.69922185}
+  m_LocalPosition: {x: 0.1204, y: -0.0006, z: 0.0016}
+  m_LocalScale: {x: 0.0522063, y: 0.052206308, z: 0.052206293}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6826021408382994627}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6426741342606208808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 19.154776
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 19.154776
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 19.154776
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.665
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.154
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.69922185
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7149048
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 268.729
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      propertyPath: m_Name
+      value: CrabArm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6312431084846714731}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8951560690715195658}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 849451969711321861}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8276147106608305417}
+    - targetCorrespondingSourceObject: {fileID: -5939684043602777953, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5550750097320634781}
+  m_SourcePrefab: {fileID: 100100000, guid: 7db2e7faa9ec9ee4493e79551cde9586, type: 3}
+--- !u!1 &6192791309071225465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+    type: 3}
+  m_PrefabInstance: {fileID: 6426741342606208808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &8951560690715195658
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192791309071225465}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &849451969711321861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192791309071225465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.02, z: 0.02}
+  m_Center: {x: 0.12, y: 0, z: 0}
+--- !u!114 &8276147106608305417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192791309071225465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e250b02046e8824983578e03ce22780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clawTransform: {fileID: 6826021408382994627}
+  clawGrabPointTransform: {fileID: 6312431084846714731}
+  clawLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  ingredientGrabScript: {fileID: 0}
+  clawScript: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!4 &6826021408382994627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+    type: 3}
+  m_PrefabInstance: {fileID: 6426741342606208808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8404385297724082103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5939684043602777953, guid: 7db2e7faa9ec9ee4493e79551cde9586,
+    type: 3}
+  m_PrefabInstance: {fileID: 6426741342606208808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5550750097320634781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404385297724082103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e250b02046e8824983578e03ce22780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clawTransform: {fileID: 0}
+  clawGrabPointTransform: {fileID: 0}
+  clawLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  ingredientGrabScript: {fileID: 0}
+  clawScript: {fileID: 0}
+  animator: {fileID: 0}

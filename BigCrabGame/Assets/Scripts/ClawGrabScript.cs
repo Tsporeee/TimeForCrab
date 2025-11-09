@@ -33,8 +33,7 @@ public class ClawGrabScript : MonoBehaviour
                 ingredientGrabScript.Drop();
                 ingredientGrabScript = null;
             }
-
-            else
+            else if (isDipping == false)
             {
                 StartCoroutine(dipClaw());
             }
@@ -50,28 +49,19 @@ public class ClawGrabScript : MonoBehaviour
             this.ingredientGrabScript = ingredientGrabScript;
         }
     }
-    public void freezeClaw()
-    {
-        Rigidbody clawRigidbody = GetComponent<Rigidbody>();
-        clawRigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-    }
-
-    public void unfreezeClaw()
-    {
-        Rigidbody clawRigidbody = GetComponent<Rigidbody>();
-        clawRigidbody.constraints = RigidbodyConstraints.None;
-    }
 
     IEnumerator dipClaw()
     {
+
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
         clawScript.StopShakeClaw();
        
         float elapsedTime = 0f;
-        float dipDownDuration = 2f;
+        float dipDownDuration = 1f;
         float dipUpDuration = 0.5f;
 
-        freezeClaw();
         Vector3 startPosition = clawTransform.position;
+        isDipping = true;
 
         while (elapsedTime < dipDownDuration)
         {
@@ -91,6 +81,7 @@ public class ClawGrabScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         elapsedTime = 0f;
 
+        boxCollider.enabled = false;
         while (elapsedTime < dipUpDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -106,7 +97,8 @@ public class ClawGrabScript : MonoBehaviour
             yield return null;
         }
 
-        unfreezeClaw();
+        isDipping = false;
+        boxCollider.enabled = true;
 
     }
 }

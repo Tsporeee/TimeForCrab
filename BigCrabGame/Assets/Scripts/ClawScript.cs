@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -56,7 +56,7 @@ public class ClawScript : MonoBehaviour
 
     public void StopShakeClaw()
     {
-        if(clawShakeCoroutine != null)
+        if (clawShakeCoroutine != null)
         {
             StopCoroutine(clawShakeCoroutine);
             clawShakeCoroutine = null;
