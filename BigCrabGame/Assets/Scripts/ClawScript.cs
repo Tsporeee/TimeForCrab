@@ -129,7 +129,7 @@ public class ClawScript : MonoBehaviour
             float xNoise = Mathf.PerlinNoise(localTime, 0f) - 0.5f;
             float zNoise = Mathf.PerlinNoise(0f, localTime) - 0.5f;
 
-            float shakeStrength = curve.Evaluate(elapsedTime / shakeDuration);
+            float shakeStrength = 0.1f; //curve.Evaluate(elapsedTime / shakeDuration);
 
             Vector3 initialPosition = transform.position;
             Vector3 newPosition = initialPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
