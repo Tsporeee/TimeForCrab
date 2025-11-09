@@ -3999,6 +3999,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1044664544}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12582880d5170944e9c45d5e76e55eed,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1044664545}
   m_SourcePrefab: {fileID: 100100000, guid: 12582880d5170944e9c45d5e76e55eed, type: 3}
 --- !u!1001 &622344838
 PrefabInstance:
@@ -7294,6 +7298,27 @@ MonoBehaviour:
   plateScript: {fileID: 2142161088}
   nextLevel: 1
   hasCelebrated: 0
+--- !u!95 &1044664545
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044664542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56b00c10e437a7444a5711663ec9959e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1077840519
 PrefabInstance:
   m_ObjectHideFlags: 0
