@@ -35,7 +35,7 @@ public class ClawScript : MonoBehaviour
         
         startPositionY = transform.position.y;
         // Fake infinite loop
-        InvokeRepeating(nameof(shakeClawMethod), 0f, 2f);
+        InvokeRepeating(nameof(shakeClawCheckExecute), 0f, 2f);
     }
 
     public void Update()
@@ -82,7 +82,7 @@ public class ClawScript : MonoBehaviour
 
     }
     
-    public void shakeClawMethod()
+    public void shakeClawCheckExecute()
     {
         // Move this to a normal method to invoke repeating
         // Dont restart if theres already a shake running
@@ -141,6 +141,9 @@ public class ClawScript : MonoBehaviour
         float dipDownDuration = 1f;
         float dipUpDuration = 0.5f;
 
+        Vector3 upPosition = transform.position;
+        Vector3 downPosition = transform.position + new Vector3(0f, -1.3f, 0f);
+
         //float startPositionY = transform.position.y;
 
         isDipping = true;
@@ -153,13 +156,14 @@ public class ClawScript : MonoBehaviour
 
             // could do this later
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float lerpSpeed = 5f;
-
+            float speed = 10f;
+        
             // Base the down position on your position already pls
-            Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 2f, transform.position.z);
-            Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
-            transform.position = lerpedDownPosition;
-
+            // Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 2f, transform.position.z);
+            // Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, downPosition, speed * Time.deltaTime);
+            //transform.position = lerpedDownPosition;
+            
             yield return null;
         }
 
@@ -173,20 +177,21 @@ public class ClawScript : MonoBehaviour
 
             // could do this later
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float lerpSpeed = 15f;
+            float speed = 15f;
 
-            Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
-            Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
-            transform.position = lerpedUpPosition;
+            // Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
+            // Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, upPosition, speed * Time.deltaTime);
+            //transform.position = lerpedUpPosition;
 
             yield return null;
         }
 
-        // Really just in case something goes wrong
+        // Really just in case something goes wrong... (it often does)
         transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
         isDipping = false;
         disableMovement = false;
-        shakeClawMethod();
+        shakeClawCheckExecute();
 
     }
 }
