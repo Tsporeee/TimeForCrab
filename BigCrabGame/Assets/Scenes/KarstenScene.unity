@@ -856,6 +856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatSashimi (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,6 +1013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlatSashimi (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
@@ -1461,6 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerScript: {fileID: 1044664544}
+  timer: 5
 --- !u!1001 &189980237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1946,6 +1957,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvocadoSushi (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2152,7 +2168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: TamagoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &317461479
@@ -2975,6 +2991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvocadoSushi (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3722,6 +3743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TamagoSushi (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4049,6 +4075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvocadoSushi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
@@ -4515,6 +4546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TamagoSushi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
@@ -5076,6 +5112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvocadoSushi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5282,6 +5323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlatSashimi (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
@@ -6916,6 +6962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvocadoSushi (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8406,6 +8457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatSashimi (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9341,6 +9397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlatSashimi (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
@@ -10294,6 +10355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TamagoSushi (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10903,6 +10969,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatSashimi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11219,6 +11290,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatSashimi (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11371,6 +11447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TamagoSushi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
@@ -11578,7 +11659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiFishEggs
+  correctFood: Onigiri
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &1621580007
@@ -11593,6 +11674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvocadoSushi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
@@ -11746,6 +11832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvocadoSushi (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
@@ -11932,7 +12023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: Onigiri
+  correctFood: SushiFishEggs
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1675604070
@@ -11968,6 +12059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TamagoSushi (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
@@ -12354,6 +12450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TamagoSushi (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12506,6 +12607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TamagoSushi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
@@ -13040,6 +13146,147 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6574347, y: 0.87476987, z: 1.6527202}
   m_Center: {x: 0.008071831, y: 0.8420572, z: -0.006353546}
+--- !u!1 &1947168292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1947168295}
+  - component: {fileID: 1947168294}
+  - component: {fileID: 1947168293}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1947168293
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947168292}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 83f643eec65318641ba01103e31e9732, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1947168294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947168292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205255910159d7549aaeaa342dc50b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1947168295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947168292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.31041187, y: 0.74978507, z: -8.376074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971745104
 GameObject:
   m_ObjectHideFlags: 0
@@ -13157,6 +13404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlatSashimi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
@@ -14709,6 +14961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatSashimi
       objectReference: {fileID: 0}
+    - target: {fileID: 470313269391511455, guid: dfd9650142627934dac5e7d249698033,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 994507999450731813, guid: dfd9650142627934dac5e7d249698033,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14952,6 +15209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvocadoSushi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013786750066669407, guid: 204fe43dcbcaecf42b70b91717713e13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 4393267364013338085, guid: 204fe43dcbcaecf42b70b91717713e13,
         type: 3}
@@ -15201,6 +15463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TamagoSushi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047290432826167220, guid: 34accd9de79dc6f4e8a56017342c60b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 7676053391665829134, guid: 34accd9de79dc6f4e8a56017342c60b6,
         type: 3}
@@ -15486,3 +15753,4 @@ SceneRoots:
   - {fileID: 1263962209}
   - {fileID: 1030554895}
   - {fileID: 845542343}
+  - {fileID: 1947168295}
