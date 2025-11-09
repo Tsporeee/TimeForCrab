@@ -444,6 +444,75 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &76431229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76431230}
+  - component: {fileID: 76431232}
+  - component: {fileID: 76431231}
+  m_Layer: 0
+  m_Name: Slot3 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76431230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76431229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.27507854, z: -0, w: 0.96142185}
+  m_LocalPosition: {x: -0.124, y: 1.5486, z: -3.054}
+  m_LocalScale: {x: 0.26628825, y: 0.08586746, z: 0.26628825}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2142161087}
+  m_LocalEulerAnglesHint: {x: 0, y: 31.933, z: 0}
+--- !u!114 &76431231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76431229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctFood: Onigiri
+  isFilled: 0
+  touchingFood: {fileID: 0}
+--- !u!65 &76431232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76431229}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7486412, y: 0.8098264, z: 0.83123386}
+  m_Center: {x: -0.71237534, y: 0.65985674, z: 0.93041915}
 --- !u!1001 &97154891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1474,6 +1543,75 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1014912153}
   m_SourcePrefab: {fileID: 100100000, guid: f7141d54437407b46878a15e71005d38, type: 3}
+--- !u!1 &216938720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216938721}
+  - component: {fileID: 216938723}
+  - component: {fileID: 216938722}
+  m_Layer: 0
+  m_Name: Slot3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216938721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216938720}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.27507854, z: -0, w: 0.96142185}
+  m_LocalPosition: {x: -0.124, y: 1.5486, z: -3.054}
+  m_LocalScale: {x: 0.26628825, y: 0.08586746, z: 0.26628825}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2142161087}
+  m_LocalEulerAnglesHint: {x: 0, y: 31.933, z: 0}
+--- !u!114 &216938722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216938720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctFood: TamagoSushi
+  isFilled: 0
+  touchingFood: {fileID: 0}
+--- !u!65 &216938723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216938720}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8328186, y: 0.8098264, z: 0.6781633}
+  m_Center: {x: 0.21003786, y: 0.65985674, z: 0.37136278}
 --- !u!1 &240241504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,8 +1964,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.80982643, z: 1}
-  m_Center: {x: 0, y: 0.6598567, z: 0}
+  m_Size: {x: 0.82870775, y: 0.8098264, z: 0.7944337}
+  m_Center: {x: -0.3477323, y: 0.65985674, z: -0.212485}
 --- !u!114 &282868316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,7 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: Onigiri
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &317461479
@@ -5521,6 +5659,147 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &786467239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786467242}
+  - component: {fileID: 786467241}
+  - component: {fileID: 786467240}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &786467240
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786467239}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 83f643eec65318641ba01103e31e9732, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &786467241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786467239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205255910159d7549aaeaa342dc50b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &786467242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786467239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.31041187, y: 0.74978507, z: -8.376074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &801617810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7347,7 +7626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateScript: {fileID: 2142161088}
-  nextLevel: 0
+  nextLevel: 4
   hasCelebrated: 0
 --- !u!1001 &1077840519
 PrefabInstance:
@@ -8738,6 +9017,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.22, y: 3.094, z: -9.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393904835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393904837}
+  - component: {fileID: 1393904836}
+  m_Layer: 0
+  m_Name: ResetButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1393904836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393904835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83255a4025733124aa07df95e05b78d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisLevel: 3
+--- !u!4 &1393904837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393904835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.085458025, y: 1.0288553, z: -8.229402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11465,8 +11789,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.5838396, z: 1}
-  m_Center: {x: 0, y: 0.20808028, z: 0}
+  m_Size: {x: 0.7523099, y: 0.5838396, z: 0.7940349}
+  m_Center: {x: -0.69875836, y: 0.20808028, z: -0.10946734}
 --- !u!114 &1617262899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11479,7 +11803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiFishEggs
+  correctFood: SushiRoll
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &1621580007
@@ -11833,7 +12157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: Onigiri
+  correctFood: SushiRoll
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1675604070
@@ -11855,8 +12179,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3748619, y: 0.048661865, z: 0.32152373}
-  m_Center: {x: -0.3125712, y: -0.4289241, z: 0.33923763}
+  m_Size: {x: 0.23984204, y: 0.048661843, z: 0.2328106}
+  m_Center: {x: -0.38008323, y: -0.42892706, z: 0.36311972}
 --- !u!1001 &1677892794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12010,6 +12334,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1677892794}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1684125775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684125776}
+  - component: {fileID: 1684125778}
+  - component: {fileID: 1684125777}
+  m_Layer: 0
+  m_Name: Slot3 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684125776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684125775}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.27507854, z: -0, w: 0.96142185}
+  m_LocalPosition: {x: -0.124, y: 1.5486, z: -3.054}
+  m_LocalScale: {x: 0.26628825, y: 0.08586746, z: 0.26628825}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2142161087}
+  m_LocalEulerAnglesHint: {x: 0, y: 31.933, z: 0}
+--- !u!114 &1684125777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684125775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctFood: SushiRoll
+  isFilled: 0
+  touchingFood: {fileID: 0}
+--- !u!65 &1684125778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684125775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7863643, y: 0.8098264, z: 0.87445533}
+  m_Center: {x: 0.17305018, y: 0.65985674, z: 1.0886445}
 --- !u!1 &1706858450
 GameObject:
   m_ObjectHideFlags: 0
@@ -12023,7 +12416,7 @@ GameObject:
   - component: {fileID: 1706858452}
   - component: {fileID: 1706858451}
   m_Layer: 0
-  m_Name: ee
+  m_Name: Speech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12071,7 +12464,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fee5dc801ec59a64a9b3c449b8ca38b6, type: 2}
+  - {fileID: 2100000, guid: 498da18ee1bbf624fb1a3b434ff2d1cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13909,6 +14302,9 @@ Transform:
   - {fileID: 1675604068}
   - {fileID: 1617262897}
   - {fileID: 282868314}
+  - {fileID: 216938721}
+  - {fileID: 76431230}
+  - {fileID: 1684125776}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2142161088
@@ -15225,3 +15621,5 @@ SceneRoots:
   - {fileID: 1275825541}
   - {fileID: 777748030}
   - {fileID: 1706858454}
+  - {fileID: 786467242}
+  - {fileID: 1393904837}
