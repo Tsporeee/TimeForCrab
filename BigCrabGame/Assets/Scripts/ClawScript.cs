@@ -11,8 +11,6 @@ public class ClawScript : MonoBehaviour
 {
     public Transform clawTransform = null;
     public Transform clawGrabPointTransform;
-    public float horizontalMaxPosition = 2f;
-    public float verticalMaxPosition = 2f;
     public float speed = 5f;
 
     // Passing other scripts
@@ -75,6 +73,12 @@ public class ClawScript : MonoBehaviour
 
         transform.position += new Vector3(horz, 0f, vert) * speed * Time.deltaTime;
 
+        //Container for movement
+        // transform.position = new Vector3(
+        // Mathf.Clamp(transform.position.x, -horizontalMaxPosition, horizontalMaxPosition),
+        // transform.position.y,
+        // Mathf.Clamp(transform.position.z, -verticalMaxPosition, verticalMaxPosition));
+
     }
     
     public void shakeClawMethod()
@@ -115,12 +119,11 @@ public class ClawScript : MonoBehaviour
             Vector3 newPosition = transform.position + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
             transform.position = newPosition;
 
-
-            // Container for movement
-            //clawTransform.position = new Vector3(
-            //Mathf.Clamp(clawTransform.position.x, -horizontalMaxPosition, horizontalMaxPosition),
-            //clawTransform.position.y,
-            //Mathf.Clamp(clawTransform.position.z, -verticalMaxPosition, verticalMaxPosition));
+            //Container for movement
+            // transform.position = new Vector3(
+            // Mathf.Clamp(transform.position.x, -horizontalMaxPosition, horizontalMaxPosition),
+            // transform.position.y,
+            // Mathf.Clamp(transform.position.z, -verticalMaxPosition, verticalMaxPosition));
 
             yield return null;
         }
@@ -135,9 +138,10 @@ public class ClawScript : MonoBehaviour
 
         float elapsedTime = 0f;
         float dipDownDuration = 1f;
-        float dipUpDuration = 0.5f;
+        float dipUpDuration = 1f;
 
-        float startPositionY = transform.position.y;
+        // float startPositionY = transform.position.y;
+        // float endPositionY = transform.position.y - 0.5f;
 
         isDipping = true;
 
@@ -150,13 +154,14 @@ public class ClawScript : MonoBehaviour
             float lerpSpeed = 2f;
 
             // Base the down position on your position already pls
-            Vector3 downPosition = new Vector3(transform.position.x, startPositionY - 1f, transform.position.z);
+            Vector3 downPosition = new Vector3(transform.position.x, -1f, transform.position.z);
             Vector3 lerpedDownPosition = Vector3.Lerp(transform.position, downPosition, Time.deltaTime * lerpSpeed);
             transform.position = lerpedDownPosition;
 
             yield return null;
         }
 
+        // transform.position = new Vector3(transform.position.x, endPositionY, transform.position.z);
         yield return new WaitForSeconds(0.5f);
         elapsedTime = 0f;
 
@@ -166,9 +171,9 @@ public class ClawScript : MonoBehaviour
 
             // could do this later
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
-            float lerpSpeed = 2f;
+            float lerpSpeed = 4f;
 
-            Vector3 upPosition = new Vector3(transform.position.x, startPositionY, transform.position.z);
+            Vector3 upPosition = new Vector3(transform.position.x, transform.position.y +1f, transform.position.z);
             Vector3 lerpedUpPosition = Vector3.Lerp(transform.position, upPosition, Time.deltaTime * lerpSpeed);
             transform.position = lerpedUpPosition;
 
@@ -176,7 +181,7 @@ public class ClawScript : MonoBehaviour
         }
 
         // Really just in case something goes wrong
-        transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
+        // transform.position = new Vector3(transform.position.x, startPositionY, transform.position.z);
         isDipping = false;
 
     }
