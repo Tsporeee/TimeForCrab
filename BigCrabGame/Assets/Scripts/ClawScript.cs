@@ -10,17 +10,14 @@ using UnityEngine.EventSystems;
 public class ClawScript : MonoBehaviour
 {
     public Transform clawTransform = null;
+    public Transform clawGrabPointTransform;
     public float horizontalMaxPosition = 2f;
     public float verticalMaxPosition = 2f;
     public float speed = 5f;
     private Vector3 inputPosition;
 
-    [SerializeField] private Transform clawGrabPointTransform;
-    [SerializeField] private LayerMask clawLayerMask;
-
     // Passing other scripts
-    private IngredientGrabScript ingredientGrabScript;
-    public ClawScript clawScript;
+    //private IngredientGrabScript ingredientGrabScript;
     public Animator animator;
 
     private bool isDipping;
@@ -61,14 +58,14 @@ public class ClawScript : MonoBehaviour
         moveClaw();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
-        {
-            ingredientGrabScript.Grab(clawGrabPointTransform);
-            this.ingredientGrabScript = ingredientGrabScript;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.TryGetComponent(out IngredientGrabScript ingredientGrabScript))
+    //    {
+    //        ingredientGrabScript.Grab(clawGrabPointTransform);
+    //        this.ingredientGrabScript = ingredientGrabScript;
+    //    }
+    //}
 
     public void moveClaw()
     {
@@ -77,8 +74,8 @@ public class ClawScript : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
 
-        inputPosition = clawTransform.localPosition + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
-        clawTransform.localPosition = inputPosition;
+        inputPosition = clawTransform.position + (new Vector3(horz, 0f, vert) * speed * Time.deltaTime);
+        clawTransform.position = inputPosition;
 
     }
     
@@ -115,15 +112,15 @@ public class ClawScript : MonoBehaviour
             
             float shakeStrength = curve.Evaluate(elapsedTime/shakeDuration);
 
-            Vector3 newPosition = inputPosition + new Vector3(xNoise, 0f, zNoise) * shakeStrength;
-            clawTransform.localPosition = newPosition;
+            Vector3 newPosition = inputPosition + (new Vector3(xNoise, 0f, zNoise) * shakeStrength);
+            clawTransform.position = newPosition;
 
 
             // Container for movement
-            clawTransform.localPosition = new Vector3(
-            Mathf.Clamp(clawTransform.localPosition.x, -horizontalMaxPosition, horizontalMaxPosition),
-            clawTransform.localPosition.y,
-            Mathf.Clamp(clawTransform.localPosition.z, -verticalMaxPosition, verticalMaxPosition));
+            //clawTransform.position = new Vector3(
+            //Mathf.Clamp(clawTransform.position.x, -horizontalMaxPosition, horizontalMaxPosition),
+            //clawTransform.position.y,
+            //Mathf.Clamp(clawTransform.position.z, -verticalMaxPosition, verticalMaxPosition));
 
             yield return null;
         }
@@ -134,7 +131,7 @@ public class ClawScript : MonoBehaviour
     {
 
         //BoxCollider boxCollider = GetComponent<BoxCollider>();
-        clawScript.StopShakeClaw();
+        StopShakeClaw();
 
         float elapsedTime = 0f;
         float dipDownDuration = 1f;
@@ -152,9 +149,9 @@ public class ClawScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 downPosition = clawTransform.localPosition + new Vector3(0f, -1f, 0f);
-            Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.localPosition, downPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.localPosition = lerpedDownPosition;
+            Vector3 downPosition = clawTransform.position + new Vector3(0f, -1f, 0f);
+            Vector3 lerpedDownPosition = Vector3.Lerp(clawTransform.position, downPosition, Time.deltaTime * lerpSpeed);
+            clawTransform.position = lerpedDownPosition;
 
             yield return null;
         }
@@ -170,9 +167,9 @@ public class ClawScript : MonoBehaviour
             // float dipStrength = curve.Evaluate(elapsedTime / shakeDuration);
             float lerpSpeed = 2f;
 
-            Vector3 upPosition = clawTransform.localPosition + new Vector3(0f, 2f, 0f);
-            Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.localPosition, upPosition, Time.deltaTime * lerpSpeed);
-            clawTransform.localPosition = lerpedUpPosition;
+            Vector3 upPosition = clawTransform.position + new Vector3(0f, 2f, 0f);
+            Vector3 lerpedUpPosition = Vector3.Lerp(clawTransform.position, upPosition, Time.deltaTime * lerpSpeed);
+            clawTransform.position = lerpedUpPosition;
 
             yield return null;
         }
