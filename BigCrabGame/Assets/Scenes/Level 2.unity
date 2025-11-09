@@ -12230,7 +12230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: Onigiri
+  correctFood: SashimiSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1675604070

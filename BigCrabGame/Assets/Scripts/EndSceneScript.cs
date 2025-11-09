@@ -45,7 +45,7 @@ public class EndSceneScript : MonoBehaviour
         cutsceneImages[1].SetActive(true);
         yield return new WaitForSeconds(screenChangeInterval);
 
-        SceneManager.LoadScene(1);
+        Application.Quit();
     }
 
     IEnumerator CutsceneEnd()
