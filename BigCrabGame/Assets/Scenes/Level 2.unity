@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerScript: {fileID: 1044664544}
-  timer: 8
+  timer: 12
 --- !u!1 &369380324
 GameObject:
   m_ObjectHideFlags: 0

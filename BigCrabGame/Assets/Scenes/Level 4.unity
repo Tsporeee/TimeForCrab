@@ -12718,7 +12718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerScript: {fileID: 1044664544}
-  timer: 12
+  timer: 18
 --- !u!1 &1738996227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4561968895862186058, guid: a3a55403b856d514c91f384eefeba279,
