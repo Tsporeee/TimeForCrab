@@ -2716,62 +2716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2bc7e81c5d88e46b3baf20c4af0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &354593285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 354593286}
-  - component: {fileID: 354593287}
-  m_Layer: 0
-  m_Name: DropShadow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &354593286
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354593285}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.50331277, y: -0.49075457, z: 0.5610283, w: -0.4371311}
-  m_LocalPosition: {x: 0.1171, y: -0.0043, z: -0.0041}
-  m_LocalScale: {x: 0.00813943, y: 0.00813943, z: 0.040697142}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1294282153}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &354593287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354593285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 7619fafe4953bee42958e68c8645fe23, type: 2}
-  m_DrawDistance: 1000
-  m_FadeScale: 0.9
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
-  m_UVBias: {x: 0, y: 0}
-  m_DecalLayerMask: 1
-  m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 25}
-  m_Size: {x: 0.2, y: 0.2, z: 50}
-  m_FadeFactor: 0.671
 --- !u!1 &369380324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8772,12 +8716,12 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
         type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 354593286}
+      insertIndex: -1
+      addedObject: {fileID: 831208178}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7db2e7faa9ec9ee4493e79551cde9586,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 831208178}
+      addedObject: {fileID: 1745309052}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db2e7faa9ec9ee4493e79551cde9586,
         type: 3}
@@ -12490,6 +12434,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: SushiFishEggs
+--- !u!1 &1745309051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745309052}
+  - component: {fileID: 1745309053}
+  m_Layer: 0
+  m_Name: DropShadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745309052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745309051}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5033127, y: -0.49075457, z: 0.5610283, w: -0.43713117}
+  m_LocalPosition: {x: 0.117699996, y: -0.0043000057, z: 0.0008999978}
+  m_LocalScale: {x: 0.008139429, y: 0.008139429, z: 0.04069714}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1294282153}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1745309053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745309051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 7619fafe4953bee42958e68c8645fe23, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 25}
+  m_Size: {x: 0.2, y: 0.2, z: 50}
+  m_FadeFactor: 0.671
 --- !u!1001 &1778516105
 PrefabInstance:
   m_ObjectHideFlags: 0
