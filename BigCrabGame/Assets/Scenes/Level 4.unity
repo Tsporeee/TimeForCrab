@@ -11923,7 +11923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: AvocadoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &1621580007
@@ -12287,7 +12287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: AvocadoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1675604070
@@ -12514,7 +12514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: AvocadoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!65 &1684125778
@@ -12657,8 +12657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc359b517cc77f4419cabd8adc0a9b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerScript: {fileID: 0}
-  timer: 5
+  customerScript: {fileID: 1044664544}
+  timer: 12
 --- !u!1 &1738996227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4561968895862186058, guid: a3a55403b856d514c91f384eefeba279,
@@ -14488,6 +14488,9 @@ MonoBehaviour:
   - {fileID: 1675604069}
   - {fileID: 1617262899}
   - {fileID: 282868316}
+  - {fileID: 216938722}
+  - {fileID: 76431231}
+  - {fileID: 1684125777}
 --- !u!1001 &2143791545
 PrefabInstance:
   m_ObjectHideFlags: 0

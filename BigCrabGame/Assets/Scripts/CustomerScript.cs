@@ -20,18 +20,18 @@ public class CustomerScript : MonoBehaviour
     }
     void Update()
     {
-        //if (plateScript.isPlateCorrect() && hasCelebrated == false)
-        //{
-        //    StartCoroutine(celebrate());
-        //}
+        if (plateScript.isPlateCorrect() && hasCelebrated == false)
+        {
+            StartCoroutine(celebrate());
+        }
     }
 
-    public void PlaySuccess()
-    {
-        anim.SetTrigger("Success");
-        winSound.Play();
-        StartCoroutine(celebrate());
-    }
+    //public void PlaySuccess()
+    //{
+    //    anim.SetTrigger("Success");
+    //    winSound.Play();
+    //    StartCoroutine(celebrate());
+    //}
     
     IEnumerator celebrate()
     {
@@ -41,6 +41,8 @@ public class CustomerScript : MonoBehaviour
         //Vector3 downPosition = transform.position;
         //Vector3 upPosition = transform.position + new Vector3(0f, 0.5f, 0f);
         hasCelebrated = true;
+        winSound.Play();
+        anim.SetTrigger("Success");
         yield return new WaitForSeconds(2.5f);
         //for (int i = 0; i < 5; i++)
         //{

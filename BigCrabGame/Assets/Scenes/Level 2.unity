@@ -2101,7 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942ef3e4762b99e4690aea7a9c1dd93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctFood: SushiRoll
+  correctFood: AvocadoSushi
   isFilled: 0
   touchingFood: {fileID: 0}
 --- !u!1001 &317461479
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerScript: {fileID: 1044664544}
-  timer: 5
+  timer: 8
 --- !u!1 &369380324
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class ClawScript : MonoBehaviour
     public Transform clawGrabPointTransform;
     public float horizontalMaxPosition = 2.5f;
     public float verticalMaxPosition = 2f;
-    public float speed = 2f;
+    public float speed = 1.5f;
 
     // Passing other scripts
     //private IngredientGrabScript ingredientGrabScript;
